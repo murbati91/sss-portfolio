@@ -1,0 +1,13 @@
+{
+  "name": "sss-portfolio",
+  "version": "1.0.0",
+  "description": "Salahuddin Softtech Solutions Portfolio",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": ["portfolio", "sss", "salahuddin"],
+  "author": "Salahuddin Softtech Solutions",
+  "license": "MIT"
+}

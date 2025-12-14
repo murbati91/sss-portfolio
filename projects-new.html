@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/sss-icon-192x192.png" type="image/png">
+    <title>SSS Projects Portfolio - Salahuddin Softtech Solutions</title>
+    <meta name="description" content="Explore all projects by Salahuddin Softtech Solutions - 70+ AI-powered applications">
+    <meta property="og:title" content="SSS Projects Portfolio" />
+    <meta property="og:description" content="Explore all projects by Salahuddin Softtech Solutions - 70+ AI-powered applications" />
+    <meta property="og:image" content="https://sss.bahrain-ai.com/sss-icon-512x512.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sss.bahrain-ai.com/projects.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SSS Projects Portfolio" />
+    <meta name="twitter:description" content="Explore all projects by Salahuddin Softtech Solutions" />
+    <meta name="twitter:image" content="https://sss.bahrain-ai.com/sss-icon-512x512.png" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 60px; }
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+        .subtitle { font-size: 1.25rem; color: #a0a0a0; font-weight: 400; }
+        .filter-tabs { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+        .filter-tab {
+            padding: 10px 24px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        .filter-tab:hover { background: rgba(102, 126, 234, 0.2); border-color: rgba(102, 126, 234, 0.5); }
+        .filter-tab.active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-color: transparent; }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+        .project-preview {
+            width: 100%;
+            height: 240px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .project-preview iframe { width: 100%; height: 100%; border: none; pointer-events: none; transform: scale(1); }
+        .project-preview .placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            font-size: 3rem;
+            opacity: 0.3;
+        }
+        .project-info { padding: 24px; }
+        .project-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; color: #ffffff; }
+        .project-description { color: #a0a0a0; font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px; }
+        .project-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .project-link:hover { color: #764ba2; }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 12px;
+            margin-left: 8px;
+        }
+        .status-live { background: rgba(46, 213, 115, 0.2); color: #2ed573; }
+        .status-featured { background: rgba(255, 184, 0, 0.2); color: #ffb800; }
+        @media (max-width: 768px) {
+            .projects-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+            .filter-tabs { gap: 8px; }
+            .filter-tab { padding: 8px 16px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SSS Projects Portfolio</h1>
+            <p class="subtitle">Explore 26+ AI-powered applications by Salahuddin Softtech Solutions</p>
+        </header>
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">All Projects (26)</button>
+            <button class="filter-tab" data-filter="ai">AI/ML (7)</button>
+            <button class="filter-tab" data-filter="enterprise">Enterprise (8)</button>
+            <button class="filter-tab" data-filter="platforms">Platforms (3)</button>
+            <button class="filter-tab" data-filter="automation">Automation (2)</button>
+            <button class="filter-tab" data-filter="tools">Tools (1)</button>
+            <button class="filter-tab" data-filter="apis">APIs (3)</button>
+        </div>
+        <div class="projects-grid" id="projectsGrid">
+            <div class="project-card" data-category="ai platforms" onclick="window.open('https://studio.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">✨</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">Studio Bahrain AI</h2>
+                    <p class="project-description">Advanced AI application builder - Transform any idea into a working app in seconds. Build applications with AI using natural language descriptions.</p>
+                    <a href="https://studio.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-featured">FEATURED</span>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="ai platforms" onclick="window.open('https://kfm.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">🎫</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">KFM Event Ticketing</h2>
+                    <p class="project-description">AI-powered event ticketing and management platform - Manage events, sell tickets, and track attendance with intelligent automation.</p>
+                    <a href="https://kfm.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-featured">FEATURED</span>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="enterprise platforms" onclick="window.open('https://palavra-web.vercel.app', '_blank')">
+                <div class="project-preview"><div class="placeholder">🏨</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">Palavra Resort</h2>
+                    <p class="project-description">Luxury 5-star resort management system - Comprehensive booking, guest management, and hospitality operations platform.</p>
+                    <a href="https://palavra-web.vercel.app" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-featured">FEATURED</span>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="automation tools" onclick="window.open('https://icc.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">🎛️</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">Infrastructure Control Center</h2>
+                    <p class="project-description">Real-time infrastructure monitoring and management dashboard - Monitor servers, deployments, and system health across all platforms.</p>
+                    <a href="https://icc.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-featured">FEATURED</span>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="ai" onclick="window.open('https://ai-analytics.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">📊</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">AI Analytics</h2>
+                    <p class="project-description">Business intelligence and analytics powered by AI - Generate insights, reports, and predictions from your business data.</p>
+                    <a href="https://ai-analytics.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="ai" onclick="window.open('https://ai-research.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">🔬</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">AI Research Platform</h2>
+                    <p class="project-description">Advanced AI research and experimentation platform - Test models, run experiments, and analyze AI performance metrics.</p>
+                    <a href="https://ai-research.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="ai" onclick="window.open('https://ai-search.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">🔍</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">AI Search Engine</h2>
+                    <p class="project-description">Semantic search powered by AI - Find information using natural language queries with intelligent context understanding.</p>
+                    <a href="https://ai-search.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="ai" onclick="window.open('https://ai-builder.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">🛠️</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">AI Builder Interface</h2>
+                    <p class="project-description">Visual AI application builder - Create custom AI workflows and automations with drag-and-drop interface.</p>
+                    <a href="https://ai-builder.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="ai apis" onclick="window.open('https://api.kfm.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">🔌</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">KFM API</h2>
+                    <p class="project-description">Event ticketing API service - RESTful API for integrating KFM event management into your applications.</p>
+                    <a href="https://api.kfm.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="enterprise" onclick="window.open('https://charter-ai.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">⚓</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">Charter AI</h2>
+                    <p class="project-description">Intelligent charter management system - Manage yacht and boat charters with AI-powered booking and scheduling.</p>
+                    <a href="https://charter-ai.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="enterprise" onclick="window.open('https://charter-ai-webapp.vercel.app', '_blank')">
+                <div class="project-preview"><div class="placeholder">🚤</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">Charter AI Web</h2>
+                    <p class="project-description">Charter AI web application - Customer-facing platform for browsing and booking charter services.</p>
+                    <a href="https://charter-ai-webapp.vercel.app" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="enterprise" onclick="window.open('https://crm.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">👥</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">CRM Platform</h2>
+                    <p class="project-description">Customer relationship management system - Manage contacts, deals, and customer interactions in one unified platform.</p>
+                    <a href="https://crm.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="enterprise" onclick="window.open('https://email.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">📧</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">Email Service</h2>
+                    <p class="project-description">Enterprise email management - Send, track, and manage transactional and marketing emails at scale.</p>
+                    <a href="https://email.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="enterprise" onclick="window.open('https://antibes-salon.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">💇</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">Antibes Salon</h2>
+                    <p class="project-description">Salon management system - Booking, staff scheduling, and customer management for beauty salons and spas.</p>
+                    <a href="https://antibes-salon.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="enterprise" onclick="window.open('https://antibes-salon-os.vercel.app', '_blank')">
+                <div class="project-preview"><div class="placeholder">💅</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">Antibes Salon OS</h2>
+                    <p class="project-description">Complete salon operating system - Full-featured management platform with POS, inventory, and analytics.</p>
+                    <a href="https://antibes-salon-os.vercel.app" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="enterprise" onclick="window.open('https://dscard.salahuddinss.com.bh', '_blank')">
+                <div class="project-preview"><iframe src="https://dscard.salahuddinss.com.bh" loading="lazy"></iframe></div>
+                <div class="project-info">
+                    <h2 class="project-title">DsCard</h2>
+                    <p class="project-description">Digital Business Card Platform - Create and share professional digital business cards with QR codes</p>
+                    <a href="https://dscard.salahuddinss.com.bh" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="enterprise" onclick="window.open('https://dscard-web.vercel.app', '_blank')">
+                <div class="project-preview"><div class="placeholder">💳</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">DsCard Web</h2>
+                    <p class="project-description">DsCard web application - Modern interface for creating and managing digital business cards.</p>
+                    <a href="https://dscard-web.vercel.app" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="platforms" onclick="window.open('https://app.muraati.ai', '_blank')">
+                <div class="project-preview"><div class="placeholder">🎪</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">Muraati Events</h2>
+                    <p class="project-description">MENA events platform - Discover and manage events across the Middle East and North Africa region.</p>
+                    <a href="https://app.muraati.ai" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="platforms" onclick="window.open('https://app.menapool.com', '_blank')">
+                <div class="project-preview"><iframe src="https://app.menapool.com" loading="lazy"></iframe></div>
+                <div class="project-info">
+                    <h2 class="project-title">MenaPool</h2>
+                    <p class="project-description">Mining Pool Management Platform - Track mining performance, payouts, and pool statistics in real-time</p>
+                    <a href="https://app.menapool.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="platforms" onclick="window.open('https://platform.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">🤖</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">Bahrain AI Platform</h2>
+                    <p class="project-description">Unified AI platform - Access all Bahrain AI tools and services from one central dashboard.</p>
+                    <a href="https://platform.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="automation" onclick="window.open('https://n8n.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">⚡</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">N8N Automation</h2>
+                    <p class="project-description">Workflow automation platform - Create powerful automations connecting apps, APIs, and databases.</p>
+                    <a href="https://n8n.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="automation apis" onclick="window.open('https://api-manager.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">🔧</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">API Management</h2>
+                    <p class="project-description">API gateway and management - Monitor, secure, and manage all API endpoints across platforms.</p>
+                    <a href="https://api-manager.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="tools" onclick="window.open('https://toolbox.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">🧰</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">Developer Toolbox</h2>
+                    <p class="project-description">Developer utilities and tools - Collection of useful tools for developers including formatters, converters, and generators.</p>
+                    <a href="https://toolbox.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="apis" onclick="window.open('https://api.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">🌐</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">Main API Gateway</h2>
+                    <p class="project-description">Central API gateway - Unified access point for all Bahrain AI APIs and services.</p>
+                    <a href="https://api.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="apis" onclick="window.open('https://api-dev.bahrain-ai.com', '_blank')">
+                <div class="project-preview"><div class="placeholder">🔬</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">Development API</h2>
+                    <p class="project-description">Development API gateway - Testing and development environment for API integrations.</p>
+                    <a href="https://api-dev.bahrain-ai.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+            <div class="project-card" data-category="apis" onclick="window.open('https://api.dscard.salahuddinss.com.bh', '_blank')">
+                <div class="project-preview"><div class="placeholder">🔐</div></div>
+                <div class="project-info">
+                    <h2 class="project-title">DsCard API</h2>
+                    <p class="project-description">DsCard API service - RESTful API for digital business card management and integration.</p>
+                    <a href="https://api.dscard.salahuddinss.com.bh" target="_blank" class="project-link" onclick="event.stopPropagation()">Visit Site →</a>
+                    <span class="status-badge status-live">LIVE</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const projectCards = document.querySelectorAll('.project-card');
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const filter = tab.getAttribute('data-filter');
+                projectCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const categories = card.getAttribute('data-category');
+                        if (categories.includes(filter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
