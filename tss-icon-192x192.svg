@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e2d4a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#152238;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="192" height="192" fill="url(#bgGradient)"/>
+
+  <!-- Mountain peaks -->
+  <g>
+    <!-- Left mountain -->
+    <path d="M40 80 L70 40 L85 60 L55 100 Z" fill="#ffffff" opacity="0.9"/>
+    <path d="M45 80 L70 45 L82 58 L58 95 Z" fill="#e0f7fa" opacity="0.5"/>
+
+    <!-- Center mountain (tallest) -->
+    <path d="M70 100 L96 30 L122 100 Z" fill="#ffffff" opacity="0.95"/>
+    <path d="M75 100 L96 35 L117 100 Z" fill="#4dd0e1" opacity="0.3"/>
+
+    <!-- Right mountain -->
+    <path d="M107 60 L137 40 L152 80 L122 100 Z" fill="#ffffff" opacity="0.85"/>
+    <path d="M110 62 L137 45 L148 78 L125 95 Z" fill="#b3e5fc" opacity="0.4"/>
+  </g>
+
+  <!-- TechSierra text -->
+  <text x="96" y="125" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#4dd0e1" text-anchor="middle">
+    TechSierra
+  </text>
+
+  <!-- SOLUTION text -->
+  <text x="96" y="142" font-family="Arial, sans-serif" font-size="12" font-weight="normal" fill="#ffffff" text-anchor="middle" letter-spacing="2">
+    SOLUTION
+  </text>
+</svg>
